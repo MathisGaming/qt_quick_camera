@@ -20,9 +20,6 @@ public:
 
 private slots:
     void set_camera(const QCameraInfo &cameraInfo);
-
-    void start_camera();
-    void stop_camera();
 private:
     Ui::MainWindow *ui;
     QCamera *camera;

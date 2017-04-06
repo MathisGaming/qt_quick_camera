@@ -12,9 +12,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //QActionGroup *videoDevicesGroup = new QActionGroup(this);
-    //videoDevicesGroup->setExclusive(true);
-
     set_camera(QCameraInfo::defaultCamera());
 }
 
@@ -33,14 +30,4 @@ void MainWindow::set_camera(const QCameraInfo &cameraInfo)
 
     camera->setViewfinder(ui->CameraView);
     camera->start();
-}
-
-void MainWindow::start_camera()
-{
-    camera->start();
-}
-
-void MainWindow::stop_camera()
-{
-    camera->stop();
 }
