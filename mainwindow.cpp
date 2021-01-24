@@ -17,14 +17,24 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete ui;
-    delete camera;
+    if (ui)
+    {
+        delete ui;
+    }
+    
+    if (camera)
+    {
+        delete camera;
+    }
 }
 
 
 void MainWindow::set_camera(const QCameraInfo &cameraInfo)
 {
-    delete camera;
+    if (camera)
+    {
+        delete camera;
+    }
 
     camera = new QCamera(cameraInfo);
 
